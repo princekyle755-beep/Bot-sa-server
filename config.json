@@ -1,6 +1,20 @@
-{
-  "serverHost": "example.aternos.me",
-  "serverPort": 12345,
-  "botUsername": "MyBot",
-  "botChunk": 1
-}
+const mineflayer = require('mineflayer')
+
+const bot = mineflayer.createBot({
+  host: 'PrinceKyle1.aternos.me',
+  port: 30131,
+  username: 'YourBotName',
+  version: 26.2
+})
+
+bot.on('spawn', () => {
+  console.log('Bot joined the server!')
+})
+
+bot.on('end', () => {
+  console.log('Bot disconnected.')
+})
+
+bot.on('error', (err) => {
+  console.log('Error:', err.message)
+})
